@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ShowInvalidCredentails(props){
+const ShowInvalidCredentails=(props)=>{
     if(props.hasLoginFailed){
 
       return <div>Invalid Credentials</div>

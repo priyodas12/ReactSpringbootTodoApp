@@ -19,7 +19,7 @@ class Login extends Component {
        }
 
         loginEventHandler(event){
-            console.log(event.target.value)
+            //console.log(event.target.value)
                 this.setState({
                   [event.target.name]:event.target.value
                 })
@@ -42,8 +42,11 @@ class Login extends Component {
             <div className='login'>
                 <p>Login Component</p>
                 <div className='userMessage'>
-                    <ShowInvalidCredentails hasLoginFailed={this.state.hasLoginFailed}/>
-                    <ShowSuccessMessageDetails showSuccessMessage={this.state.showSuccessMessage}/>
+                    {/*<ShowInvalidCredentails hasLoginFailed={this.state.hasLoginFailed}/>
+                    <ShowSuccessMessageDetails showSuccessMessage={this.state.showSuccessMessage}/>*/}
+                    {/*is first variable is true then below expression will return 2nd string variable value*/}
+                    {this.state.hasLoginFailed && <div>Invalid Credentials</div>}
+                    {this.state.showSuccessMessage && <div>Login Successful</div>}
                 </div>
                 Username:
                 <input type='text' name='username' value={this.state.username} onChange={this.loginEventHandler}/><br/><br/>
