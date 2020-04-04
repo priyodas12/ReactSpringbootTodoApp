@@ -5,7 +5,7 @@ export class WelcomePage extends Component {
     render() {
         return (
             <div>
-                <p>welcome to priyo@workspace.io</p>
+                <p>welcome to {this.props.match.params.name}@workspace.io</p>
             </div>
         )
     }

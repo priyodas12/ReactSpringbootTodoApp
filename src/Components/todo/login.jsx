@@ -7,7 +7,7 @@ class Login extends Component {
         super(props)
 
         this.state = {
-           username:'priyodas12@gmail.com',
+           username:'priyodas12',
            password:'ashjdkask',
            hasLoginFailed:false,
            showSuccessMessage:false
@@ -25,14 +25,14 @@ class Login extends Component {
                 })
               }
         loginHandler(){
-          if(this.state.username==='priyodas12@gmail.com' && this.state.password==='ashjdkask' ){
+          if(this.state.username==='priyodas12' && this.state.password==='ashjdkask' ){
             {/*console.log("login Successfull!")*/}
-            this.props.history.push('/welcome')
+            this.props.history.push(`/welcome/${this.state.username}`)
             this.setState({hasLoginFailed:false})
             this.setState({showSuccessMessage:true})
           }else{
             {/*console.log("login Failed!")*/}
-            this.props.history.push('/error')
+            {/*this.props.history.push('/error')*/}
             this.setState({hasLoginFailed:true})
             this.setState({showSuccessMessage:false})
           }
