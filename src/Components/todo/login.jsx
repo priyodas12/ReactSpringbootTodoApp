@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import ShowSuccessMessageDetails from './ShowSuccessMessageDetails'
-import ShowInvalidCredentails from './ShowInvalidCredentails'
 import AuthenticationService from './AuthenticationService.js'
 
 class Login extends Component {
@@ -13,8 +11,6 @@ class Login extends Component {
            hasLoginFailed:false,
            showSuccessMessage:false
          }
-         {/*this.usernameChangeHandler=this.usernameChangeHandler.bind(this);
-         this.passwordChangeHandler=this.passwordChangeHandler.bind(this);*/}
          this.loginEventHandler=this.loginEventHandler.bind(this)
          this.loginHandler=this.loginHandler.bind(this)
        }
@@ -27,14 +23,11 @@ class Login extends Component {
               }
         loginHandler(){
           if(this.state.username==='priyodas12' && this.state.password==='ashjdkask' ){
-            {/*console.log("login Successfull!")*/}
             AuthenticationService.registerSuccessLogin(this.state.username,this.state.password);
             this.props.history.push(`/welcome/${this.state.username}`)
             this.setState({hasLoginFailed:false})
             this.setState({showSuccessMessage:true})
           }else{
-            {/*console.log("login Failed!")*/}
-            {/*this.props.history.push('/error')*/}
             this.setState({hasLoginFailed:true})
             this.setState({showSuccessMessage:false})
           }
@@ -46,9 +39,7 @@ class Login extends Component {
             <div className='login-box'>
                 <h1>Login Component</h1>
                 <div className='userMessage'>
-                    {/*<ShowInvalidCredentails hasLoginFailed={this.state.hasLoginFailed}/>
-                    <ShowSuccessMessageDetails showSuccessMessage={this.state.showSuccessMessage}/>*/}
-                    {/*is first variable is true then below expression will return 2nd string variable value*/}
+
                     {this.state.hasLoginFailed && <div className="alert alert-warning">Invalid Credentials</div>}
                     {this.state.showSuccessMessage && <div className="alert alert-success">Login Successful</div>}
                 </div>
