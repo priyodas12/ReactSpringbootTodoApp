@@ -36,7 +36,10 @@ export class WelcomePage extends Component {
       {/*HelloWorldService.executeHelloWorldService()
       .then(response=>this.handleSuccessfulResponse(response))*/}
 
-      HelloWorldService.executeHelloWorldBeanService()
+      {/*HelloWorldService.executeHelloWorldBeanService()
+      .then(response=>this.handleSuccessfulResponse(response))*/}
+
+      HelloWorldService.executeHelloWorldPathService(this.props.match.params.name)
       .then(response=>this.handleSuccessfulResponse(response))
     }
 
