@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ShowSuccessMessageDetails from './ShowSuccessMessageDetails'
 import ShowInvalidCredentails from './ShowInvalidCredentails'
+import AuthenticationService from './AuthenticationService.js'
 
 class Login extends Component {
       constructor(props) {
@@ -27,6 +28,7 @@ class Login extends Component {
         loginHandler(){
           if(this.state.username==='priyodas12' && this.state.password==='ashjdkask' ){
             {/*console.log("login Successfull!")*/}
+            AuthenticationService.registerSuccessLogin(this.state.username,this.state.password);
             this.props.history.push(`/welcome/${this.state.username}`)
             this.setState({hasLoginFailed:false})
             this.setState({showSuccessMessage:true})

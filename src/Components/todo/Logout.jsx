@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import AuthenticationService from './AuthenticationService.js'
 
 export class Logout extends Component {
     render() {

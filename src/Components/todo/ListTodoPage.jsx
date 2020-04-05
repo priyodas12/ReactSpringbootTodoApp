@@ -32,7 +32,7 @@ export class ListTodoPage extends Component {
                     <tbody>
                       {
                         this.state.todos.map(todo=>
-                          <tr>
+                          <tr key={todo.id}>
                               <td>{todo.id}</td>
                               <td>{todo.name}</td>
                               <td>{todo.isDone.toString()}</td>
