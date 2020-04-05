@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Loxagon from './loxagon.png';
 import { BrowserRouter as Router, Route,Switch,Link} from 'react-router-dom'
 import AuthenticationService from './AuthenticationService.js'
+import { withRouter } from 'react-router';
 
 export class Header extends Component {
     render() {
@@ -36,4 +37,4 @@ export class Header extends Component {
     }
 }
 
-export default Header
+export default withRouter(Header)
