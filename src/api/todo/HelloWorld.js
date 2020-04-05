@@ -1,7 +1,12 @@
+import axios from 'axios'
 class HelloWorldService {
 
   executeHelloWorldService(){
-    console.log('hello world!')
+    return   axios.get('http://localhost:8496/api/greet');
+  }
+
+  executeHelloWorldBeanService(){
+    return   axios.get('http://localhost:8496/api/greet-bean');
   }
 
 }

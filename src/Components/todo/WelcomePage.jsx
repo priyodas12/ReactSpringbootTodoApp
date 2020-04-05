@@ -8,9 +8,10 @@ export class WelcomePage extends Component {
         super(props)
 
         this.state = {
-
+            message:""
         }
         this.retrieveWelcomeMessage=this.retrieveWelcomeMessage.bind(this)
+        this.handleSuccessfulResponse=this.handleSuccessfulResponse.bind(this)
     }
 
     render() {
@@ -24,12 +25,28 @@ export class WelcomePage extends Component {
                 <p>CLick here to get customized greetings!</p>
                 <button onClick={this.retrieveWelcomeMessage} className='btn btn-success'>Get WelcomeMessage</button>
             </div>
+            <div className='container'>
+                {this.state.message}
+            </div>
           </div>
         )
     }
     retrieveWelcomeMessage(){
       console.log('welcome')
-      HelloWorldService.executeHelloWorldService();
+      {/*HelloWorldService.executeHelloWorldService()
+      .then(response=>this.handleSuccessfulResponse(response))*/}
+
+      HelloWorldService.executeHelloWorldBeanService()
+      .then(response=>this.handleSuccessfulResponse(response))
+    }
+
+    handleSuccessfulResponse(response){
+      console.log(response)
+      this.setState({
+        message:response.data.beanId
+      }
+    )
+
     }
 }
 
