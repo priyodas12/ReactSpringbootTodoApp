@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.footer{
+  position: absolute;
+  width: 100%;
+  text-decoration-color: blue;
+  bottom: 0;
+  height:30px;
+  background-color: #444444;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -6,6 +6,7 @@ import InvalidPage from './InvalidPage'
 import ListTodoPage from './ListTodoPage'
 import Header from './Header'
 import Footer from './Footer'
+import Logout from './Logout'
 import { BrowserRouter as Router, Route,Switch,Link} from 'react-router-dom'
 
 export class TodoApp extends Component {
@@ -19,6 +20,7 @@ export class TodoApp extends Component {
                     <Route path="/login" component={Login}/>
                     <Route path="/welcome/:name" component={WelcomePage}/>
                     <Route path="/todos" exact component={ListTodoPage}/>
+                    <Route path="/logout" exact component={Logout}/>
                     {/*<Route path="/error" exact component={ErrorPage}/>*/}
                     <Route path="" exact component={InvalidPage}/>
                   </Switch>

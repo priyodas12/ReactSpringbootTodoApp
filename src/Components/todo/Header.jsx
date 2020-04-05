@@ -6,10 +6,11 @@ export class Header extends Component {
     render() {
         return (
           <header>
-            <nav className='navbar navbar-expand-sm bg-primary navbar-dark'>
-              <section className="one-fourth" id="html">
-                  <img src={Loxagon} />
-              </section>
+            <nav className='navbar navbar-expand-sm bg-secondary navbar-dark'>
+
+              <a href="#">
+                  <img src={Loxagon} style={{width:85, marginTop: -5}} />
+              </a>
               <a href='https://www.github.com/priyodas12' class='navbar-brand'>loxagon.io</a>
               <ul className='navbar-nav'>
                 <li>
