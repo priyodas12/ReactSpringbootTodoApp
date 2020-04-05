@@ -19,28 +19,30 @@ export class ListTodoPage extends Component {
         return (
             <div>
               <h3>List ToDos</h3>
-              <table>
-                  <thead>
-                      <tr>
-                          <th>Id</th>
-                          <th>Desc</th>
-                          <th>Status</th>
-                          <th>Target Date</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    {
-                      this.state.todos.map(todo=>
+              <div className='container'>
+                <table className="table table-striped table-borderless">
+                    <thead className='thead-dark'>
                         <tr>
-                            <td>{todo.id}</td>
-                            <td>{todo.name}</td>
-                            <td>{todo.isDone.toString()}</td>
-                            <td>{todo.timeline.toString()}</td>
+                            <th>Id</th>
+                            <th>Desc</th>
+                            <th>Status</th>
+                            <th>Target Date</th>
                         </tr>
-                      )
-                    }
-                  </tbody>
-              </table>
+                    </thead>
+                    <tbody>
+                      {
+                        this.state.todos.map(todo=>
+                          <tr>
+                              <td>{todo.id}</td>
+                              <td>{todo.name}</td>
+                              <td>{todo.isDone.toString()}</td>
+                              <td>{todo.timeline.toString()}</td>
+                          </tr>
+                        )
+                      }
+                    </tbody>
+                  </table>
+              </div>
             </div>
         )
     }

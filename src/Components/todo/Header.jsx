@@ -6,8 +6,7 @@ export class Header extends Component {
     render() {
         return (
           <header>
-            <nav className='navbar navbar-expand-sm bg-secondary navbar-dark'>
-
+            <nav className='navbar navbar-expand-md navbar-dark bg-secondary'>
               <a href="#">
                   <img src={Loxagon} style={{width:85, marginTop: -5}} />
               </a>

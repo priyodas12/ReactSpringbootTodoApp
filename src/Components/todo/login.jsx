@@ -41,20 +41,28 @@ class Login extends Component {
 
         render() {
           return (
-            <div className='login'>
-                <p>Login Component</p>
+            <div className='login-box'>
+                <h1>Login Component</h1>
                 <div className='userMessage'>
                     {/*<ShowInvalidCredentails hasLoginFailed={this.state.hasLoginFailed}/>
                     <ShowSuccessMessageDetails showSuccessMessage={this.state.showSuccessMessage}/>*/}
                     {/*is first variable is true then below expression will return 2nd string variable value*/}
-                    {this.state.hasLoginFailed && <div>Invalid Credentials</div>}
-                    {this.state.showSuccessMessage && <div>Login Successful</div>}
+                    {this.state.hasLoginFailed && <div className="alert alert-warning">Invalid Credentials</div>}
+                    {this.state.showSuccessMessage && <div className="alert alert-success">Login Successful</div>}
                 </div>
-                Username:
-                <input type='text' name='username' value={this.state.username} onChange={this.loginEventHandler}/><br/><br/>
-                Password:
-                <input type='password' name='password' value={this.state.password} onChange={this.loginEventHandler}/> <br/><br/>
-                <button onClick={this.loginHandler}>login</button>
+                <form>
+                  <div className="form-group">
+                          <label>Username:</label>
+                          <div>
+                              <input type='text' name='username' value={this.state.username} onChange={this.loginEventHandler}/><br/><br/>
+                          </div>
+                          <label>Password:</label>
+                          <div>
+                              <input type='password' name='password' value={this.state.password} onChange={this.loginEventHandler}/> <br/><br/>
+                          </div>
+                          <button className='btn btn-success' onClick={this.loginHandler}>login</button>
+                    </div>
+                </form>
             </div>
         )
     }
