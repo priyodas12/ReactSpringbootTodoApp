@@ -6,7 +6,7 @@ export class WelcomePage extends Component {
     render() {
         return (
             <div>
-                <p>welcome to {this.props.match.params.name}@workspace.io</p>
+                <p>welcome to {this.props.match.params.name}@loxagon.io</p>
                 You can manage your <Link to='/todos'>todo Here</Link>
             </div>
         )
