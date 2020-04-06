@@ -12,6 +12,7 @@ export class WelcomePage extends Component {
         }
         this.retrieveWelcomeMessage=this.retrieveWelcomeMessage.bind(this)
         this.handleSuccessfulResponse=this.handleSuccessfulResponse.bind(this)
+        this.handleErrorResponse=this.handleErrorResponse.bind(this)
     }
 
     render() {
@@ -32,24 +33,30 @@ export class WelcomePage extends Component {
         )
     }
     retrieveWelcomeMessage(){
-      console.log('welcome')
+      //console.log('welcome')
       {/*HelloWorldService.executeHelloWorldService()
       .then(response=>this.handleSuccessfulResponse(response))*/}
 
       {/*HelloWorldService.executeHelloWorldBeanService()
       .then(response=>this.handleSuccessfulResponse(response))*/}
 
-      HelloWorldService.executeHelloWorldPathService(this.props.match.params.name)
+      HelloWorldService.executeHelloWorldErrorService(this.props.match.params.name)
       .then(response=>this.handleSuccessfulResponse(response))
+      .catch(error=>this.handleErrorResponse(error))
     }
 
     handleSuccessfulResponse(response){
       console.log(response)
       this.setState({
         message:response.data.beanId
-      }
-    )
+      })
+    }
 
+    handleErrorResponse(error){
+      //console.log(error)
+      this.setState({
+        message:error.response.data.message
+      })
     }
 }
 
