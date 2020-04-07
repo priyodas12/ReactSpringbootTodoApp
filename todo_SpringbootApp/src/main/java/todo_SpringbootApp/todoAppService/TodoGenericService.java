@@ -26,4 +26,25 @@ public class TodoGenericService {
 		return todoList;
 	}
 
+	public Todo deleteById(long id) {
+		Todo todo=findById(id);
+		if(todo==null) {
+			return null;
+		}
+		if(todoList.remove(todo)) {
+			return todo;
+		}
+		return null;
+	}
+
+	public Todo findById(long id) {
+		// TODO Auto-generated method stub
+		for(Todo todo:todoList) {
+			if(todo.getId()==id) {
+				return todo;
+			}
+			
+		}
+		return null;
+	}
 }
