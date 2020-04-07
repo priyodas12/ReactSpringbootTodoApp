@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Loxagon from './loxagon.png';
-import { BrowserRouter as Router, Route,Switch,Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import AuthenticationService from './AuthenticationService.js'
 import { withRouter } from 'react-router';
 
@@ -12,9 +12,9 @@ export class Header extends Component {
           <header>
             <nav className='navbar navbar-expand-md navbar-dark bg-secondary'>
               <a href="#">
-                  <img src={Loxagon} style={{width:85, marginTop: -5}} />
+                  <img src={Loxagon} style={{width:85, marginTop: -5}} alt='loxagon-img' />
               </a>
-              <a href='https://www.github.com/priyodas12' class='navbar-brand'>loxagon.io</a>
+              <a href='https://www.github.com/priyodas12' className='navbar-brand' alt='github link'>loxagon.io</a>
               <ul className='navbar-nav'>
                 <li>
                 {userStatus && <Link className='nav-link' to='/welcome/priyodas12'>Home</Link>}

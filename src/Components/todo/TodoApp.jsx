@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
 import Login from './Login'
 import WelcomePage from './WelcomePage'
-import ErrorPage from './ErrorPage'
 import InvalidPage from './InvalidPage'
 import ListTodoPage from './ListTodoPage'
 import Header from './Header'
 import Footer from './Footer'
 import Logout from './Logout'
-import AuthenticationService from './AuthenticationService.js'
 import AuthenticatedRoute from './AuthenticatedRoute'
 
-import { BrowserRouter as Router, Route,Switch,Link} from 'react-router-dom'
+import { BrowserRouter as Router, Route,Switch} from 'react-router-dom'
 
 export class TodoApp extends Component {
     render() {
