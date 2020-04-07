@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import TodoDataService from '../../api/todo/TodoDataService.js'
+import AuthenticationService from './AuthenticationService.js'
 
 export class ListTodoPage extends Component {
 
@@ -6,13 +8,22 @@ export class ListTodoPage extends Component {
         super(props)
 
         this.state = {
-             todos:[
-               {id:1,name:'get up @8am',isDone:false,timeline:new Date()},
-               {id:2,name:'finish react project',isDone:false,timeline:new Date()},
-               {id:3,name:'cook on time',isDone:true,timeline:new Date()},
-               {id:4,name:'go to market',isDone:false,timeline:new Date()}
-             ]
+             todos:[]
         }
+    }
+
+    componentDidMount(){
+      let username=AuthenticationService.getLoggedInUsername()
+      TodoDataService.rerieveAllTodos(username)
+      .then(
+        response=>{
+          console.log(response)
+          this.setState({
+            todos:response.data
+          })
+        }
+      )
+
     }
 
     render() {
@@ -24,9 +35,9 @@ export class ListTodoPage extends Component {
                     <thead className='thead-dark'>
                         <tr>
                             <th>Id</th>
-                            <th>Desc</th>
-                            <th>Status</th>
-                            <th>Target Date</th>
+                            <th>desc</th>
+                            <th>TargetDate</th>
+                            <th>status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,9 +45,9 @@ export class ListTodoPage extends Component {
                         this.state.todos.map(todo=>
                           <tr key={todo.id}>
                               <td>{todo.id}</td>
-                              <td>{todo.name}</td>
-                              <td>{todo.isDone.toString()}</td>
-                              <td>{todo.timeline.toString()}</td>
+                              <td>{todo.desc}</td>
+                              <td>{todo.targetDate}</td>
+                              <td>{todo.status.toString()==='true'?'Done':'Pending'}</td>
                           </tr>
                         )
                       }
