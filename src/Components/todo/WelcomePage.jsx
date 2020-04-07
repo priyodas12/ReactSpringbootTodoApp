@@ -6,7 +6,6 @@ import HelloWorldService from '../../api/todo/HelloWorld.js'
 export class WelcomePage extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             message:""
         }
@@ -33,13 +32,7 @@ export class WelcomePage extends Component {
         )
     }
     retrieveWelcomeMessage(){
-      //console.log('welcome')
-      {/*HelloWorldService.executeHelloWorldService()
-      .then(response=>this.handleSuccessfulResponse(response))*/}
-
-      {/*HelloWorldService.executeHelloWorldBeanService()
-      .then(response=>this.handleSuccessfulResponse(response))*/}
-
+      
       HelloWorldService.executeHelloWorldErrorService(this.props.match.params.name)
       .then(response=>this.handleSuccessfulResponse(response))
       .catch(error=>this.handleErrorResponse(error))
